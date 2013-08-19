@@ -569,12 +569,10 @@ If you wish to build for this JDK, modify ${unix.script}.
       <exclude name="mondrian/olap4j/FactoryJdbc41Impl.java" if="jdk17.not.present"/>
       <exclude name="mondrian/util/UtilCompatibleJdk16.java" if="jdk15.present"/>
     </javac>
-    <copy file="src/main/mondrian/rolap/aggmatcher/DefaultRules.xml"
-        todir="${classes.dir}"/>
-    <copy file="VERSION.txt"
-            todir="${classes.dir}"/>
-    <copy file="src/main/mondrian/rolap/aggmatcher/DefaultRulesSchema.xml"
-        todir="${classes.dir}"/>
+    <copy file="src/main/mondrian/rolap/aggmatcher/DefaultRules.xml" todir="${classes.dir}"/>
+    <copy file="VERSION.txt" todir="${classes.dir}"/>
+    <copy file="VERSION.txt" todir="${classes.dir}/mondrian/server"/>
+    <copy file="src/main/mondrian/rolap/aggmatcher/DefaultRulesSchema.xml" todir="${classes.dir}"/>
     <copy todir="${classes.dir}">
       <fileset
           dir="${java.dir}"
@@ -1279,6 +1277,7 @@ must be run under JDK 1.5." />
 **/*.class,
 **/*.properties,
 **/*.xml,
+**/*.txt,
 META-INF/**"
           excludes="mondrian/gui/**/*.*"/>
       <zipfileset
@@ -1296,8 +1295,7 @@ mondrian/test/loader/insert.sql"/>
           dir="."
           includes="
 LICENSE.html,
-README.txt,
-VERSION.txt"/>
+README.txt"/>
       <manifest>
         <attribute name="Built-By" value="${user.name}"/>
         <section name="mondrian.olap">
