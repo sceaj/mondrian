@@ -20,77 +20,20 @@
          data source. Therefore, we recommend that you use a single
          data source, containing multiple catalogs if necessary.
      -->
+
     <DataSource>
-        <!--
-             Name of the data source.
-        -->
-        <DataSourceName>Provider=Mondrian;DataSource=MondrianFoodMart;</DataSourceName>
-
-        <!--
-             Description of the data source.
-        -->
-        <DataSourceDescription>Mondrian FoodMart Data Warehouse</DataSourceDescription>
-
-        <!-- 
-             The URL of the servlet.
-        -->
-        <URL>http://localhost:8888/mondrian/xmla</URL>
-
-        <!--
-             Mondrian connect string for the data source. If this data
-             source contains multiple catalogs, omit the 'Catalog'
-             property, and specify the URI of the schema.xml file in
-             the catalog's <Definition> element.
-
-             Catalogs can override the connect string with their own
-             <DataSourceInfo> element.
-          -->
-        <DataSourceInfo>Provider=mondrian;Jdbc=jdbc:oracle:thin:foodmart/foodmart@//marmalade.hydromatic.net:1521/XE;JdbcUser=foodmart;JdbcPassword=foodmart;JdbcDrivers=oracle.jdbc.OracleDriver;Catalog=/WEB-INF/queries/FoodMart.xml</DataSourceInfo>
-
-        <!-- 
-             Provider name must be 'Mondrian'.
-        -->
+        <DataSourceName>Provider=Mondrian;DataSource=GermainDatamart;</DataSourceName>
+        <DataSourceDescription>Germain APM Data Mart</DataSourceDescription>
+        <URL>https://dev.germainsoftware.com:9443/mondrian/xmla</URL>
+        <DataSourceInfo>Provider=mondrian;DataSource=java:comp/env/jdbc/gdatamart</DataSourceInfo>
         <ProviderName>Mondrian</ProviderName>
-
-        <!-- 
-             Provider type must be 'MDP'.
-        -->
         <ProviderType>MDP</ProviderType>
-
-        <!-- 
-             Authentication mode. Allowable values are
-             'Unauthenticated', 'Authenticated', 'Integrated'. 
-        -->
         <AuthenticationMode>Unauthenticated</AuthenticationMode>
-
-        <!-- 
-             A data source contains one or more catalogs.
-        -->
         <Catalogs>
-            <!-- 
-                Catalog names must match the name inside the
-                schema.xml file, and must be unique across all data
-                sources defined in this datasources.xml file.
-            -->
-            <Catalog name="FoodMart">
-                <!--
-                     Mondrian connect string for the data source. This
-                     element is optional; if specified, it overrides the
-                     data source's <DataSourceInfo> element. Typically,
-                     you would use this element if the catalogs have
-                     different JDBC data sources.
-                 -->
-                <!--
-                <DataSourceInfo>Provider=mondrian;Jdbc=jdbc:odbc:MondrianFoodMart;JdbcDrivers=sun.jdbc.odbc.JdbcOdbcDriver</DataSourceInfo>
-                 -->
-
-                <!-- 
-                    URI of the schema definition file.
-                -->
-                <Definition>/WEB-INF/queries/FoodMart.xml</Definition>
+            <Catalog name="GermainDatamart">
+                <Definition>/WEB-INF/queries/GermainDatamart.xml</Definition>
             </Catalog>
         </Catalogs>
-
     </DataSource>
 
 </DataSources>

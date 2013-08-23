@@ -2,13 +2,12 @@
 <%@ taglib uri="http://www.tonbeller.com/jpivot" prefix="jp" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
-<jp:mondrianQuery id="query01" jdbcDriver="org.apache.derby.jdbc.EmbeddedDriver" jdbcUrl="jdbc:derby:classpath:/foodmart" catalogUri="/WEB-INF/queries/FoodMart.xml"
-   jdbcUser="sa" jdbcPassword="sa" connectionPooling="false">
-select
-  {[Measures].[Unit Sales], [Measures].[Store Cost], [Measures].[Store Sales]} on columns,
-  {([Promotion Media].[All Media], [Product].[All Products])} ON rows
-from Sales
-where ([Time].[1997])
+<jp:mondrianQuery id="query01" dataSource="jdbc/gdatamart" catalogUri="/WEB-INF/queries/GermainDatamart.xml">
+SELECT 
+  { [Time].[2012].[2].[5].Children } ON COLUMNS,
+  { [Transaction Name].Members } ON ROWS
+FROM [Transaction]
+WHERE ( [Measures].[Count] )
 </jp:mondrianQuery>
 
 

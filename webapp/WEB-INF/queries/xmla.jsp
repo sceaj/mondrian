@@ -7,15 +7,15 @@
     * Change uri attribute to your deployment of this webapp.
     * The dataSource attribute is necessary for Mondrian's XMLA.
 -->
-<jp:xmlaQuery id="query01"
+<jp:xmlaQuery id="query02"
     uri="http://localhost:8080/mondrian/xmla"
-    dataSource="Provider=Mondrian;DataSource=MondrianFoodMart;"
-  	catalog="FoodMart">
-select
-  {[Measures].[Unit Sales], [Measures].[Store Cost], [Measures].[Store Sales]} on columns,
-  {([Promotion Media].[All Media], [Product].[All Products])} ON rows
-from Sales
-where ([Time].[1997])
+    dataSource="Provider=Mondrian;DataSource=GermainDatamart;"
+  	catalog="GermainDatamart">
+SELECT 
+  NON EMPTY { CrossJoin([Transaction Color].Members, [System Data Center].[Hostname].Members) } ON COLUMNS,
+  { [Time].[2012].[2].Children } ON ROWS
+FROM [Transaction]
+WHERE ( [Measures].[Count] )
 </jp:xmlaQuery>
 
-<c:set var="title01" scope="session">Accessing Mondrian By XMLA</c:set>
+<c:set var="title02" scope="session">Accessing Mondrian By XMLA (Germain Datamart)</c:set>
