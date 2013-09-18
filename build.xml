@@ -1528,18 +1528,20 @@ Assumes that mondrian.jar exists (use 'jar' target)">
       <fileset dir="${build.dir}/mondrian" includes="index.jsp,xmla.jsp"/>
       <fileset dir="${build.dir}/mondrian/WEB-INF" includes="web.xml,datasources.xml,mondrian.properties"/>
       <fileset dir="${build.dir}/mondrian/WEB-INF/queries" includes="xmla.jsp,*.xml"/>
-      <fileset dir="${build.dir}/mondrian/WEB-INF/lib" includes="${name}.jar,eigenbase-*.jar,*.xml,mondrian.dtd"/>
+      <fileset dir="${build.dir}/mondrian/WEB-INF/lib" includes="${name}.jar,eigenbase-*.jar,log4j*.jar,*.xml,mondrian.dtd"/>
     </delete>
 
     <mkdir dir="${lib.dir}" />
 
     <!-- Build the WEB-INF directory. -->
-    <copy file="${webapp.dir}/WEB-INF/web-jpivot.xml"
+    <copy file="${webapp.dir}/WEB-INF/web-germain.xml"
         tofile="${build.dir}/mondrian/WEB-INF/web.xml" />
+  	<copy file="${lib.dir}/log4j.jar"
+  	    tofile="${build.dir}/mondrian/WEB-INF/lib/log4j.jar" />
     <copy todir="${build.dir}/mondrian/WEB-INF">
       <fileset
           dir="${webapp.dir}/WEB-INF"
-          includes="mondrian.properties,datasources.xml,*.xsl,*.tld,**/*.jsp"/>
+          includes="mondrian.properties,datasources.xml,glassfish-web.xml,*.xsl,*.tld,**/*.jsp,queries/GermainDatamart.xml"/>
     </copy>
 
     <!-- our FoodMart.xml may be newer than jpivot's -->
