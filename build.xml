@@ -1536,12 +1536,14 @@ Assumes that mondrian.jar exists (use 'jar' target)">
     <!-- Build the WEB-INF directory. -->
     <copy file="${webapp.dir}/WEB-INF/web-germain.xml"
         tofile="${build.dir}/mondrian/WEB-INF/web.xml" />
-  	<copy file="${lib.dir}/log4j.jar"
-  	    tofile="${build.dir}/mondrian/WEB-INF/lib/log4j.jar" />
+    <copy file="${webapp.dir}/WEB-INF/mondrian.properties"
+        tofile="${build.dir}/mondrian/WEB-INF/classes/mondrian.properties" />
+    <copy file="${lib.dir}/log4j.jar"
+        tofile="${build.dir}/mondrian/WEB-INF/lib/log4j.jar" />
     <copy todir="${build.dir}/mondrian/WEB-INF">
       <fileset
           dir="${webapp.dir}/WEB-INF"
-          includes="mondrian.properties,datasources.xml,glassfish-web.xml,*.xsl,*.tld,**/*.jsp,queries/GermainDatamart.xml"/>
+          includes="datasources.xml,glassfish-web.xml,*.xsl,*.tld,**/*.jsp,queries/GermainDatamart.xml"/>
     </copy>
 
     <!-- our FoodMart.xml may be newer than jpivot's -->
