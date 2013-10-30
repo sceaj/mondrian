@@ -1,90 +1,20 @@
 <Schema name="GermainDatamart">
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="System Data Center">
-    <Hierarchy visible="true" hasAll="true" allMemberName="All Systems" primaryKey="ID" defaultMember="All Systems">
+    <Hierarchy visible="true" hasAll="true" allMemberName="All Data Centers" primaryKey="ID">
       <Table name="SYSTEM_DIMENSION">
       </Table>
       <Level name="Data Center" visible="true" column="DATA_CENTER" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Flavor" visible="true" column="OS_FLAVOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Version" visible="true" column="OS_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Hostname" visible="true" column="HOSTNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Name" column="NAME" type="String">
-        </Property>
-        <Property name="Type" column="TYPE" type="String">
-        </Property>
-        <Property name="Timezone" column="LOCAL_TIMEZONE" type="String">
-        </Property>
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
-        <Property name="IPv4" column="IPV4_ADDR" type="String">
-        </Property>
-        <Property name="IPv4 Snbits" column="IPV4_SNBITS" type="Numeric">
-        </Property>
-        <Property name="IPv6" column="IPV6_ADDR" type="String">
-        </Property>
-        <Property name="IPv6 Prefix" column="IPV6_PREFIX" type="Numeric">
-        </Property>
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="System Name" visible="true" hasAll="true" primaryKey="ID">
-      <Table name="SYSTEM_DIMENSION">
-      </Table>
-      <Level name="Data Center" visible="true" column="DATA_CENTER" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Flavor" visible="true" column="OS_FLAVOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Version" visible="true" column="OS_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Name" visible="true" column="ID" nameColumn="NAME" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Hostname" column="HOSTNAME" type="String">
-        </Property>
-        <Property name="Type" column="TYPE" type="String">
-        </Property>
-        <Property name="Timezone" column="LOCAL_TIMEZONE" type="String">
-        </Property>
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
-        <Property name="IPv4" column="IPV4_ADDR" type="String">
-        </Property>
-        <Property name="IPv4 Snbits" column="IPV4_SNBITS" type="Numeric">
-        </Property>
-        <Property name="IPv6" column="IPV6_ADDR" type="String">
-        </Property>
-        <Property name="IPv6 Prefix" column="IPV6_PREFIX" type="Numeric">
-        </Property>
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="System Type">
-    <Hierarchy visible="true" hasAll="true" allMemberName="All Systems" primaryKey="ID" defaultMember="All Systems">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="System">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
       <Table name="SYSTEM_DIMENSION">
       </Table>
       <Level name="Type" visible="true" column="TYPE" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="OS Flavor" visible="true" column="OS_FLAVOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Version" visible="true" column="OS_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Data Center" visible="true" column="DATA_CENTER" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Hostname" visible="true" column="HOSTNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      <Level name="Hostname" visible="true" column="HOSTNAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
         <Property name="Name" column="NAME" type="String">
-        </Property>
-        <Property name="Type" column="TYPE" type="String">
-        </Property>
-        <Property name="Timezone" column="LOCAL_TIMEZONE" type="String">
-        </Property>
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
-        <Property name="IPv4" column="IPV4_ADDR" type="String">
-        </Property>
-        <Property name="IPv4 Snbits" column="IPV4_SNBITS" type="Numeric">
-        </Property>
-        <Property name="IPv6" column="IPV6_ADDR" type="String">
-        </Property>
-        <Property name="IPv6 Prefix" column="IPV6_PREFIX" type="Numeric">
         </Property>
       </Level>
     </Hierarchy>
@@ -93,150 +23,52 @@
       </Table>
       <Level name="Type" visible="true" column="TYPE" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="OS Flavor" visible="true" column="OS_FLAVOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Version" visible="true" column="OS_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Data Center" visible="true" column="DATA_CENTER" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-      </Level>
       <Level name="Name" visible="true" column="NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         <Property name="Hostname" column="HOSTNAME" type="String">
-        </Property>
-        <Property name="Type" column="TYPE" type="String">
-        </Property>
-        <Property name="Timezone" column="LOCAL_TIMEZONE" type="String">
-        </Property>
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
-        <Property name="IPv4" column="IPV4_ADDR" type="String">
-        </Property>
-        <Property name="IPv4 Snbits" column="IPV4_SNBITS" type="Numeric">
-        </Property>
-        <Property name="IPv6" column="IPV6_ADDR" type="String">
-        </Property>
-        <Property name="IPv6 Prefix" column="IPV6_PREFIX" type="Numeric">
         </Property>
       </Level>
     </Hierarchy>
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="System Network">
-    <Hierarchy visible="true" hasAll="true" allMemberName="All Systems" primaryKey="ID" defaultMember="All Systems">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
       <Table name="SYSTEM_DIMENSION">
       </Table>
-      <Level name="Data Center" visible="true" column="DATA_CENTER" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      <Level name="IPv4 Subnet" visible="true" column="IPV4_SUBNET" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Subnet" visible="true" column="IPV4_SNBITS" type="Numeric" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="IPv4" visible="true" column="IPV4_ADDR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Flavor" visible="true" column="OS_FLAVOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Version" visible="true" column="OS_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Hostname" visible="true" column="HOSTNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Name" column="NAME" type="String">
-        </Property>
-        <Property name="Type" column="TYPE" type="String">
-        </Property>
-        <Property name="Timezone" column="LOCAL_TIMEZONE" type="String">
-        </Property>
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
-        <Property name="IPv6" column="IPV6_ADDR" type="String">
-        </Property>
-        <Property name="IPv6 Prefix" column="IPV6_PREFIX" type="Numeric">
-        </Property>
+      <Level name="IPv4" visible="true" column="IPV4_ADDR" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
-    <Hierarchy name="System Name" visible="true" hasAll="true" primaryKey="ID">
+    <Hierarchy name="Network IPv6" visible="true" hasAll="true" primaryKey="ID">
       <Table name="SYSTEM_DIMENSION">
       </Table>
-      <Level name="Data Center" visible="true" column="DATA_CENTER" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      <Level name="IPv6 Subnet" visible="true" column="IPV6_SUBNET" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Subnet" visible="true" column="IPV4_SNBITS" type="Numeric" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="IPv4" visible="true" column="IPV4_ADDR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Flavor" visible="true" column="OS_FLAVOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="OS Version" visible="true" column="OS_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Name" visible="true" column="NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Hostname" column="HOSTNAME" type="String">
-        </Property>
-        <Property name="Type" column="TYPE" type="String">
-        </Property>
-        <Property name="Timezone" column="LOCAL_TIMEZONE" type="String">
-        </Property>
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
-        <Property name="IPv6" column="IPV6_ADDR" type="String">
-        </Property>
-        <Property name="IPv6 Prefix" column="IPV6_PREFIX" type="Numeric">
-        </Property>
+      <Level name="IPv6" visible="true" column="IPV6_ADDR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
-  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="System OS">
-    <Hierarchy visible="true" hasAll="true" allMemberName="All Systems" primaryKey="ID" defaultMember="All Systems">
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Operating System">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
       <Table name="SYSTEM_DIMENSION">
       </Table>
       <Level name="OS Flavor" visible="true" column="OS_FLAVOR" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
       <Level name="OS Version" visible="true" column="OS_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Data Center" visible="true" column="DATA_CENTER" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Hostname" visible="true" column="HOSTNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Name" column="NAME" type="String">
-        </Property>
-        <Property name="Type" column="TYPE" type="String">
-        </Property>
-        <Property name="Timezone" column="LOCAL_TIMEZONE" type="String">
-        </Property>
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
-        <Property name="IPv4" column="IPV4_ADDR" type="String">
-        </Property>
-        <Property name="IPv4 Snbits" column="IPV4_SNBITS" type="Numeric">
-        </Property>
-        <Property name="IPv6" column="IPV6_ADDR" type="String">
-        </Property>
-        <Property name="IPv6 Prefix" column="IPV6_PREFIX" type="Numeric">
-        </Property>
       </Level>
     </Hierarchy>
-    <Hierarchy name="System Name" visible="true" hasAll="true" primaryKey="ID">
-      <Table name="SYSTEM_DIMENSION">
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Process">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
+      <Table name="PROCESS_DIMENSION">
       </Table>
-      <Level name="OS Flavor" visible="true" column="OS_FLAVOR" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      <Level name="Process ID" visible="true" column="PID" type="Numeric" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="OS Version" visible="true" column="OS_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Data Center" visible="true" column="DATA_CENTER" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Name" visible="true" column="ID" nameColumn="NAME" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Hostname" column="HOSTNAME" type="String">
-        </Property>
-        <Property name="Type" column="TYPE" type="String">
-        </Property>
-        <Property name="Timezone" column="LOCAL_TIMEZONE" type="String">
-        </Property>
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
-        <Property name="IPv4" column="IPV4_ADDR" type="String">
-        </Property>
-        <Property name="IPv4 Snbits" column="IPV4_SNBITS" type="Numeric">
-        </Property>
-        <Property name="IPv6" column="IPV6_ADDR" type="String">
-        </Property>
-        <Property name="IPv6 Prefix" column="IPV6_PREFIX" type="Numeric">
-        </Property>
+      <Level name="Thread ID" visible="true" column="TID" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Application">
-    <Hierarchy visible="true" hasAll="true" allMemberName="All Applications" primaryKey="ID" defaultMember="All Applications">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
       <Table name="APPLICATION_DIMENSION">
       </Table>
       <Level name="Category" visible="true" column="CATEGORY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
@@ -244,97 +76,91 @@
       <Level name="Sub Category" visible="true" column="SUB_CATEGORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
       <Level name="Application" visible="true" column="APPLICATION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
       </Level>
       <Level name="Version" visible="true" column="VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
       <Level name="Component" visible="true" column="COMPONENT" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
       <Level name="Sub Component" visible="true" column="SUB_COMPONENT" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Operation" visible="true" column="OPER_OR_PROC" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
     <Hierarchy name="Application Name" visible="true" hasAll="true" primaryKey="ID">
       <Table name="APPLICATION_DIMENSION">
       </Table>
       <Level name="Application" visible="true" column="APPLICATION" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-        <Property name="Locale" column="LOCALE" type="String">
-        </Property>
       </Level>
       <Level name="Version" visible="true" column="VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Category" visible="true" column="CATEGORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Sub Category" visible="true" column="SUB_CATEGORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
       <Level name="Component" visible="true" column="COMPONENT" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
       <Level name="Sub Component" visible="true" column="SUB_COMPONENT" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Operation" visible="true" column="OPER_OR_PROC" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+    </Hierarchy>
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Session">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
+      <Table name="SESSION_DIMENSION">
+      </Table>
+      <Level name="Session ID" visible="true" column="SESSION_ID" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Database">
-    <Hierarchy visible="true" hasAll="true" allMemberName="All Databases" primaryKey="ID" defaultMember="All Databases">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
       <Table name="DATABASE_DIMENSION">
       </Table>
       <Level name="DB Flavor" visible="true" column="DB_FLAVOR" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
       <Level name="DB Version" visible="true" column="DB_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Schema" visible="true" column="SCHEMA_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Name" column="NAME" type="String">
-        </Property>
-        <Property name="Port" column="PORT" type="Numeric">
+      <Level name="Name" visible="true" column="ID" nameColumn="NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Property name="Schema" column="DB_SCHEMA" type="String">
         </Property>
       </Level>
     </Hierarchy>
-    <Hierarchy name="Database Name" visible="true" hasAll="true" primaryKey="ID">
+    <Hierarchy name="Database Schema" visible="true" hasAll="true" primaryKey="ID">
       <Table name="DATABASE_DIMENSION">
       </Table>
       <Level name="DB Flavor" visible="true" column="DB_FLAVOR" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
       <Level name="DB Version" visible="true" column="DB_VERSION" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Name" visible="true" column="ID" nameColumn="NAME" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Schema" column="SCHEMA_NAME" type="String">
-        </Property>
-        <Property name="Port" column="PORT" type="Numeric">
-        </Property>
+      <Level name="Schema" visible="true" column="DB_SCHEMA" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="User">
-    <Hierarchy visible="true" hasAll="true" allMemberName="All Users" primaryKey="ID" defaultMember="All Users">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
       <Table name="USER_DIMENSION">
       </Table>
-      <Level name="Department" visible="true" column="DEPARTMENT" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Role" visible="true" column="USERROLE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Username" visible="true" column="USERNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-        <Property name="Primary" column="PRIMARY_FLG" type="Numeric">
-        </Property>
+      <Level name="Username" visible="true" column="USERNAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
     <Hierarchy name="User Role" visible="true" hasAll="true" primaryKey="ID">
       <Table name="USER_DIMENSION">
       </Table>
       <Level name="Role" visible="true" column="USERROLE" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Department" visible="true" column="DEPARTMENT" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
-      </Level>
-      <Level name="Username" visible="true" column="USERNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         <Property name="Primary" column="PRIMARY_FLG" type="Numeric">
         </Property>
+      </Level>
+      <Level name="Username" visible="true" column="USERNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="User Department" visible="true" hasAll="true" primaryKey="ID">
+      <Table name="USER_DIMENSION">
+      </Table>
+      <Level name="Department" visible="true" column="DEPARTMENT" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+      </Level>
+      <Level name="Role" visible="true" column="USERROLE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Property name="Primary" column="PRIMARY_FLG" type="Numeric">
+        </Property>
+      </Level>
+      <Level name="Username" visible="true" column="USERNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
   <Dimension type="StandardDimension" visible="true" highCardinality="false" name="User Location">
-    <Hierarchy visible="true" hasAll="true" allMemberName="All User Locations" primaryKey="ID" primaryKeyTable="USER_DIMENSION" defaultMember="All User Locations">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID" primaryKeyTable="USER_DIMENSION">
       <Join leftKey="ID" rightKey="LOCATION_ID">
         <Table name="LOCATION_DIMENSION">
         </Table>
@@ -363,9 +189,23 @@
       </Table>
       <Level name="Year" visible="true" column="YEAR" ordinalColumn="YEAR" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
       </Level>
+      <Level name="Month" visible="true" column="MONTH" nameColumn="MONTH_NAME" ordinalColumn="MONTH" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      </Level>
+      <Level name="Day Of Month" visible="true" column="DAY_OF_MONTH" ordinalColumn="DAY_OF_MONTH" type="Numeric" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      </Level>
+      <Level name="Hour" visible="true" column="HOUR" ordinalColumn="HOUR" type="Numeric" uniqueMembers="false" levelType="TimeHours" hideMemberIf="Never">
+      </Level>
+      <Level name="Minute" visible="true" column="MINUTE" ordinalColumn="MINUTE" type="Numeric" uniqueMembers="false" levelType="TimeMinutes" hideMemberIf="Never">
+      </Level>
+    </Hierarchy>
+    <Hierarchy name="Quarters" visible="true" hasAll="true" primaryKey="ID">
+      <Table name="TIME_DIMENSION">
+      </Table>
+      <Level name="Year" visible="true" column="YEAR" ordinalColumn="YEAR" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+      </Level>
       <Level name="Quarter" visible="true" column="QUARTER" ordinalColumn="QUARTER" type="Numeric" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
       </Level>
-      <Level name="Month" visible="true" column="MONTH" ordinalColumn="MONTH" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Month" visible="true" column="MONTH" nameColumn="MONTH_NAME" ordinalColumn="MONTH" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
       </Level>
       <Level name="Day Of Month" visible="true" column="DAY_OF_MONTH" ordinalColumn="DAY_OF_MONTH" type="Numeric" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
       </Level>
@@ -377,11 +217,11 @@
     <Hierarchy name="Julian Week" visible="true" hasAll="true" primaryKey="ID">
       <Table name="TIME_DIMENSION">
       </Table>
-      <Level name="Year" visible="true" column="YEAR" ordinalColumn="YEAR" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Year" visible="true" column="JWK_YEAR" ordinalColumn="JWK_YEAR" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
       </Level>
-      <Level name="Week Of Year" visible="true" column="WEEK_OF_YEAR" ordinalColumn="WEEK_OF_YEAR" type="Numeric" uniqueMembers="false" levelType="TimeWeeks" hideMemberIf="Never">
+      <Level name="Week Of Year" visible="true" column="JWK_WEEK" ordinalColumn="JWK_WEEK" type="Numeric" uniqueMembers="false" levelType="TimeWeeks" hideMemberIf="Never">
       </Level>
-      <Level name="Day Of Week" visible="true" column="DAY_OF_WEEK" ordinalColumn="DAY_OF_WEEK" type="Numeric" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
+      <Level name="Day Of Week" visible="true" column="DAY_OF_WEEK" nameColumn="WEEKDAY" ordinalColumn="DAY_OF_WEEK" type="Numeric" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
       </Level>
       <Level name="Hour" visible="true" column="HOUR" ordinalColumn="HOUR" type="Numeric" uniqueMembers="false" levelType="TimeHours" hideMemberIf="Never">
       </Level>
@@ -400,26 +240,16 @@
       <Level name="Minute" visible="true" column="MINUTE" ordinalColumn="MINUTE" type="Numeric" uniqueMembers="false" levelType="TimeMinutes" hideMemberIf="Never">
       </Level>
     </Hierarchy>
-    <Hierarchy name="Week of Month" visible="true" hasAll="true" primaryKey="ID" description="with week of months">
+  </Dimension>
+  <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Day of Week">
+    <Hierarchy visible="true" hasAll="true" primaryKey="ID">
       <Table name="TIME_DIMENSION">
       </Table>
-      <Level name="Year" visible="true" column="YEAR" ordinalColumn="YEAR" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
+      <Level name="Day of Week" visible="true" column="DAY_OF_WEEK" ordinalColumn="DAY_OF_WEEK" nameColumn="WEEKDAY" type="Numeric" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Month" visible="true" column="MONTH" ordinalColumn="MONTH" type="Numeric" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+      <Level name="Hour" visible="true" column="HOUR" ordinalColumn="HOUR" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
-      <Level name="Week Of Month" visible="true" column="WEEK_OF_MONTH" ordinalColumn="WEEK_OF_MONTH" type="Numeric" uniqueMembers="false" levelType="TimeWeeks" hideMemberIf="Never">
-      </Level>
-    </Hierarchy>
-    <Hierarchy name="Day of Week" visible="true" hasAll="true" primaryKey="ID">
-      <Table name="TIME_DIMENSION">
-      </Table>
-      <Level name="Year" visible="true" column="YEAR" ordinalColumn="YEAR" type="Numeric" uniqueMembers="true" levelType="TimeYears" hideMemberIf="Never">
-      </Level>
-      <Level name="Weekday" visible="true" column="DAY_OF_WEEK" ordinalColumn="DAY_OF_WEEK" type="Numeric" uniqueMembers="false" levelType="TimeDays" hideMemberIf="Never">
-      </Level>
-      <Level name="Hour" visible="true" column="HOUR" ordinalColumn="HOUR" type="Numeric" uniqueMembers="false" levelType="TimeHours" hideMemberIf="Never">
-      </Level>
-      <Level name="Minute" visible="true" column="MINUTE" ordinalColumn="MINUTE" type="Numeric" uniqueMembers="false" levelType="TimeMinutes" hideMemberIf="Never">
+      <Level name="Minute" visible="true" column="MINUTE" ordinalColumn="MINUTE" type="Numeric" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
       </Level>
     </Hierarchy>
   </Dimension>
@@ -428,11 +258,13 @@
     </Table>
     <DimensionUsage source="System Data Center" name="System Data Center" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Type" name="System Type" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System" name="System" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="System Network" name="System Network" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System OS" name="System OS" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="Operating System" name="Operating System" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Process" name="Process" visible="true" foreignKey="PROCESS_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Database" name="Database" visible="true" foreignKey="DATABASE_ID" highCardinality="false">
     </DimensionUsage>
@@ -442,35 +274,17 @@
     </DimensionUsage>
     <DimensionUsage source="Application" name="Application" visible="true" foreignKey="APPL_ID" highCardinality="false">
     </DimensionUsage>
+    <DimensionUsage source="Session" name="Session" visible="true" foreignKey="SESSION_ID" highCardinality="false">
+    </DimensionUsage>
     <DimensionUsage source="Time" name="Time" visible="true" foreignKey="TIME_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Day of Week" name="Day of Week" visible="true" foreignKey="TIME_ID" highCardinality="false">
     </DimensionUsage>
     <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Transaction Type">
       <Hierarchy visible="true" hasAll="true">
-        <Level name="Transaction Type" visible="true" column="T_TYPE" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        <Level name="Category" visible="true" column="T_CATEGORY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
         </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Transaction Name">
-      <Hierarchy visible="true" hasAll="true">
-        <Level name="Transaction Name" visible="true" column="T_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Transaction Process">
-      <Hierarchy visible="true" hasAll="true">
-        <Level name="Transaction Process" visible="true" column="T_PID" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Transaction Thread">
-      <Hierarchy visible="true" hasAll="true">
-        <Level name="Transaction Thread" visible="true" column="T_TID" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
-        </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Transaction Session">
-      <Hierarchy visible="true" hasAll="true">
-        <Level name="Transaction Session" visible="true" column="T_SESSION_ID" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        <Level name="Name" visible="true" column="T_NAME" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
@@ -486,29 +300,29 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Measure name="Count" column="ID" datatype="Integer" formatString="######" aggregator="distinct-count" visible="true">
+    <Measure name="Transaction Count" column="ID" datatype="Integer" formatString="######" aggregator="count" visible="true">
     </Measure>
     <Measure name="Transaction Duration" column="T_DURATION" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
     </Measure>
-    <Measure name="Transaction Success" column="T_SUCCESS" datatype="Numeric" formatString="######" aggregator="sum" visible="true">
+    <Measure name="Transaction Success Rate" column="T_SUCCESS" datatype="Numeric" formatString="0.0%" aggregator="avg" visible="true">
     </Measure>
     <Measure name="Transaction Threshold Red" column="T_THRESHOLD_RED" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
     </Measure>
     <Measure name="Transaction Threshold Yellow" column="T_THRESHOLD_YELLOW" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
     </Measure>
-    <CalculatedMember name="Transaction Success Avg" formatString="#.###" formula="measures.[Transaction Success]/measures.[Count]" dimension="Measures" visible="true">
-    </CalculatedMember>
   </Cube>
   <Cube name="Metric" visible="true" cache="true" enabled="true">
     <Table name="MONITORING_METRIC">
     </Table>
     <DimensionUsage source="System Data Center" name="System Data Center" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Type" name="System Type" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System" name="System" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="System Network" name="System Network" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System OS" name="System OS" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="Operating System" name="Operating System" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Process" name="Process" visible="true" foreignKey="PROCESS_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Database" name="Database" visible="true" foreignKey="DATABASE_ID" highCardinality="false">
     </DimensionUsage>
@@ -518,11 +332,17 @@
     </DimensionUsage>
     <DimensionUsage source="Time" name="Time" visible="true" foreignKey="TIME_ID" highCardinality="false">
     </DimensionUsage>
+    <DimensionUsage source="Day of Week" name="Day of Week" visible="true" foreignKey="TIME_ID" highCardinality="false">
+    </DimensionUsage>
     <DimensionUsage source="Application" name="Application" visible="true" foreignKey="APPL_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Session" name="Session" visible="true" foreignKey="SESSION_ID" highCardinality="false">
     </DimensionUsage>
     <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Metric Type">
       <Hierarchy visible="true" hasAll="true">
-        <Level name="Metric Type" visible="true" column="M_TYPE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Category" visible="false" column="M_CATEGORY" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Name" visible="true" column="M_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
@@ -544,18 +364,18 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Measure name="Count" column="ID" datatype="Integer" formatString="######" aggregator="distinct-count" visible="true">
+    <Measure name="Metric Count" column="ID" datatype="Integer" formatString="######" aggregator="count" visible="true">
     </Measure>
     <Measure name="Metric Value" column="M_VALUE" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
     </Measure>
-    <Measure name="Metric Success" column="M_SUCCESS" datatype="Numeric" formatString="######" aggregator="sum" visible="true">
+    <Measure name="Metric Unit" column="M_UNIT" datatype="String" aggregator="max" visible="true">
+    </Measure>
+    <Measure name="Metric Success Rate" column="M_SUCCESS" datatype="Numeric" formatString="0.0%" aggregator="avg" visible="true">
     </Measure>
     <Measure name="Metric Threshold Red" column="M_THRESHOLD_RED" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
     </Measure>
-    <Measure name="Metric Unit" column="M_UNIT" datatype="String" formatString="##" aggregator="max" visible="true">
+    <Measure name="Metric Threshold Yellow" column="M_THRESHOLD_YELLOW" formatString="###.###" aggregator="avg" visible="true">
     </Measure>
-    <CalculatedMember name="Metric Success Avg" formatString="#.###" formula="measures.[Metric Success]/measures.[Count]" dimension="Measures" visible="true">
-    </CalculatedMember>
     <CalculatedMember name="Metric Value and Unit" description="value with appended unit" formula="Format(measures.[Metric Value] , &#34;##.###&#34;) || &#39; &#39; || COALESCEEMPTY(measures.[Metric Unit],&#39;&#39;)" dimension="Measures" visible="true">
     </CalculatedMember>
   </Cube>
@@ -564,11 +384,11 @@
     </Table>
     <DimensionUsage source="System Data Center" name="System Data Center" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Type" name="System Type" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System" name="System" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="System Network" name="System Network" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System OS" name="System OS" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="Operating System" name="Operating System" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Database" name="Database" visible="true" foreignKey="DATABASE_ID" highCardinality="false">
     </DimensionUsage>
@@ -578,17 +398,15 @@
     </DimensionUsage>
     <DimensionUsage source="Time" name="Time" visible="true" foreignKey="TIME_ID" highCardinality="false">
     </DimensionUsage>
+    <DimensionUsage source="Day of Week" name="Day of Week" visible="true" foreignKey="TIME_ID" highCardinality="false">
+    </DimensionUsage>
     <DimensionUsage source="Application" name="Application" visible="true" foreignKey="APPL_ID" highCardinality="false">
     </DimensionUsage>
-    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Availability Category">
+    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Availability Type">
       <Hierarchy visible="true" hasAll="true">
-        <Level name="Availability Category" visible="true" column="AVL_CATEGORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Category" visible="true" column="AVL_CATEGORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
-      </Hierarchy>
-    </Dimension>
-    <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Availability Resource">
-      <Hierarchy visible="true" hasAll="true">
-        <Level name="Availability Resource" visible="true" column="AVL_RESOURCE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Name" visible="true" column="AVL_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
@@ -598,37 +416,37 @@
         </Level>
       </Hierarchy>
     </Dimension>
-    <Measure name="Count" column="ID" datatype="Integer" formatString="######" aggregator="distinct-count" visible="true">
+    <Measure name="Availability Count" column="ID" datatype="Integer" formatString="######" aggregator="count" visible="true">
     </Measure>
-    <Measure name="Availability" column="AVL_STATUS" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
+    <Measure name="Availability" column="AVL_STATUS" datatype="Numeric" formatString="0.0%" aggregator="avg" visible="true">
     </Measure>
     <Measure name="Availability Sum" column="AVL_STATUS" datatype="Numeric" formatString="######" aggregator="sum" visible="true">
     </Measure>
-    <Measure name="Availability Success" column="AVL_SUCCESS" datatype="Numeric" formatString="######" aggregator="sum" visible="true">
+    <Measure name="Availability Success Rate" column="AVL_SUCCESS" datatype="Numeric" formatString="0.0%" aggregator="avg" visible="true">
     </Measure>
-    <CalculatedMember name="Availability Success Avg" formatString="#.###" formula="measures.[Availability Success]/measures.[Count]" dimension="Measures" visible="true">
-    </CalculatedMember>
   </Cube>
   <Cube name="Network Latency" visible="true" cache="true" enabled="true">
     <Table name="MONITORING_NETWORK_LATENCY">
     </Table>
-    <DimensionUsage source="System Data Center" name="System Data Center Source" visible="true" foreignKey="SRC_SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System Data Center" name="Source Data Center" visible="true" foreignKey="SRC_SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Data Center" name="System Data Center Destination" visible="true" foreignKey="DST_SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System Data Center" name="Destination Data Center" visible="true" foreignKey="DST_SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Type" name="System Source Type Source" visible="true" foreignKey="SRC_SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System" name="Source System" visible="true" foreignKey="SRC_SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Type" name="System Type Destination" visible="true" foreignKey="DST_SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System" name="Destination System" visible="true" foreignKey="DST_SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Network" name="System Network Source" visible="true" foreignKey="SRC_SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System Network" name="Source Network" visible="true" foreignKey="SRC_SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Network" name="System Network Destination" visible="true" foreignKey="DST_SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System Network" name="Destination Network" visible="true" foreignKey="DST_SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System OS" name="System OS Source" visible="true" foreignKey="SRC_SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="Operating System" name="Source Operating System" visible="true" foreignKey="SRC_SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System OS" name="System OS Destination" visible="true" foreignKey="DST_SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="Operating System" name="Destination Operating System" visible="true" foreignKey="DST_SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Time" name="Time" visible="true" foreignKey="TIME_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Day of Week" name="Day of Week" visible="true" foreignKey="TIME_ID" highCardinality="false">
     </DimensionUsage>
     <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Network Latency  Success">
       <Hierarchy visible="true" hasAll="true">
@@ -637,32 +455,34 @@
       </Hierarchy>
     </Dimension>
     <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Network Latency Color">
-      <Hierarchy visible="true" hasAll="false">
+      <Hierarchy visible="true" hasAll="true">
         <Level name="Network Latency Color" visible="true" column="L_COLOR" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
-    <Measure name="Count" column="ID" datatype="Integer" formatString="######" aggregator="distinct-count" visible="true">
+    <Measure name="Network Latency Count" column="ID" datatype="Integer" formatString="######" aggregator="count" visible="true">
     </Measure>
-    <Measure name="Network Latency Latency" column="L_LATENCY" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
+    <Measure name="Network Latency" column="L_LATENCY" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
     </Measure>
-    <Measure name="Network Latency Success" column="L_SUCCESS" datatype="Numeric" formatString="######" aggregator="sum" visible="true">
+    <Measure name="Network Latency Success Rate" column="L_SUCCESS" datatype="Numeric" formatString="0.0%" aggregator="avg" visible="true">
     </Measure>
     <Measure name="Network Latency Threshold Red" column="L_THRESHOLD_RED" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
     </Measure>
-    <CalculatedMember name="Network Latency Success Avg" formatString="#.###" formula="measures.[Network Latency Success]/measures.[Count]" dimension="Measures" visible="true">
-    </CalculatedMember>
+    <Measure name="Network Latency Threshold Yellow" column="L_THRESHOLD_YELLOW" datatype="Numeric" formatString="###.###" aggregator="avg" visible="true">
+    </Measure>
   </Cube>
   <Cube name="Event" visible="true" cache="true" enabled="true">
     <Table name="MONITORING_EVENT">
     </Table>
     <DimensionUsage source="System Data Center" name="System Data Center" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System Type" name="System Type" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="System" name="System" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="System Network" name="System Network" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
     </DimensionUsage>
-    <DimensionUsage source="System OS" name="System OS" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    <DimensionUsage source="Operating System" name="Operating System" visible="true" foreignKey="SYSTEM_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Process" name="Process" visible="true" foreignKey="PROCESS_ID" highCardinality="false">
     </DimensionUsage>
     <DimensionUsage source="Database" name="Database" visible="true" foreignKey="DATABASE_ID" highCardinality="false">
     </DimensionUsage>
@@ -672,15 +492,21 @@
     </DimensionUsage>
     <DimensionUsage source="Time" name="Time" visible="true" foreignKey="TIME_ID" highCardinality="false">
     </DimensionUsage>
+    <DimensionUsage source="Day of Week" name="Day of Week" visible="true" foreignKey="TIME_ID" highCardinality="false">
+    </DimensionUsage>
     <DimensionUsage source="Application" name="Application" visible="true" foreignKey="APPL_ID" highCardinality="false">
+    </DimensionUsage>
+    <DimensionUsage source="Session" name="Session" visible="true" foreignKey="SESSION_ID" highCardinality="false">
     </DimensionUsage>
     <Dimension type="StandardDimension" visible="true" highCardinality="false" name="Event Type">
       <Hierarchy visible="true" hasAll="true">
-        <Level name="Event Type" visible="true" column="EV_TYPE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        <Level name="Category" visible="true" column="EV_CATEGORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Name" visible="true" column="EV_NAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
         </Level>
       </Hierarchy>
     </Dimension>
-    <Measure name="Count" column="ID" datatype="Integer" formatString="######" aggregator="distinct-count" visible="true">
+    <Measure name="Event Count" column="ID" datatype="Integer" formatString="######" aggregator="distinct-count" visible="true">
     </Measure>
   </Cube>
 </Schema>
